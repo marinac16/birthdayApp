@@ -21,10 +21,36 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        $destinationsListe = $this->destinationRepo->findAll();
+
 
         return $this->render('default/index.html.twig', [
+
+        ]);
+    }
+
+    /**
+     * @Route("/choisi-la-destination", name="choix")
+     */
+    public function AfficherChoix()
+    {
+        $destinationsListe = $this->destinationRepo->findAll();
+
+        return $this->render('default/choix.html.twig', [
             'destinationsListe' => $destinationsListe,
         ]);
+
+    }
+
+    /**
+     * @Route("/remerciement", name="remerciement")
+     */
+    public function AfficherRemerciement()
+    {
+
+
+        return $this->render('default/remerciement.html.twig', [
+
+        ]);
+
     }
 }

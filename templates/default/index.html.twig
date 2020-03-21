@@ -3,31 +3,14 @@
 {% block title %}App{% endblock %}
 
 {% block body %}
-    <div class="explication">
+    <div id="explication_container">
         <h1>Bonjour et bienvenue à bord de AirMuzon</h1>
 
         <p>C'est votre commandant de bord qui vous parle.</p>
         <p>Vous êtes ici pour choisir la prochaine destination voyage de Marina.</p>
 
-        <button type="button">Je vote</button>
+        <a href="{{ path('choix') }}"> <button type="button">Je vote</button></a>
     </div>
 
-    <div class="choix">
-        <h1>
-            Je choisi la destination dans laquelle j'envoie Marina pour son
-            prochain voyage
-        </h1>
-
-        {% for destination in destinationsListe %}
-        <div>
-            <img src="{{ destination.url }}" class="img-destination">
-            <h4>{{ destination.name }}</h4>
-        </div>
-        {% endfor %}
-
-    </div>
-    <div class="remerciement">
-        <h1>Merci pour ta participation</h1>
-    </div>
 
 {% endblock %}

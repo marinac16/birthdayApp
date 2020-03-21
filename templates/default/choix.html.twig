@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}App{% endblock %}
+
+{% block body %}
+
+
+    <div id="choix_container">
+        <h1>
+            Je choisi la destination dans laquelle j'envoie Marina pour son
+            prochain voyage
+        </h1>
+
+        {% for destination in destinationsListe %}
+            <a href="{{ path('remerciement') }}">
+                <div>
+                    <img src="{{ destination.url }}" class="img-destination">
+                    <h4>{{ destination.name }}</h4>
+                </div>
+            </a>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
