@@ -11,14 +11,27 @@
             prochain voyage
         </h1>
 
-        {% for destination in destinationsListe %}
-            <a href="{{ path('remerciement') }}">
-                <div>
-                    <img src="{{ destination.url }}" class="img-destination">
-                    <h4>{{ destination.name }}</h4>
+        {{ form_start(form) }}
+        {% for destinationField in form.destination %}
+            {% set index = destinationField.vars.value %}
+            {% set entity = form.destination.vars.choices[index].data %}
+
+            <div>
+                <div class="">
+                    <img class="img-destination" src="{{ entity.url  }}" alt="">
                 </div>
-            </a>
+                <div>
+                    <h3>{{ form_label(destinationField) }}</h3>
+                    <h3>{{ form_widget(destinationField) }}</h3>
+                </div>
+            </div>
+
+
+
         {% endfor %}
+        <button type="submit">Voter</button>
+        {{ form_end(form) }}
+
 
     </div>
 

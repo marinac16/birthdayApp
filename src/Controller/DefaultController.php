@@ -2,8 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Vote;
+use App\Form\VoteType;
 use App\Repository\DestinationRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
@@ -30,13 +35,35 @@ class DefaultController extends AbstractController
 
     /**
      * @Route("/choisi-la-destination", name="choix")
+     * @param Request $request
+     * @param EntityManagerInterface $em
+     * @return Response
      */
-    public function AfficherChoix()
+    public function AfficherChoix(Request $request, EntityManagerInterface $em)
     {
         $destinationsListe = $this->destinationRepo->findAll();
 
+        $vote = new Vote();
+        $user = $this->getUser();
+
+        $form = $this->createForm(VoteType::class, $vote);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $vote->setUser($user);
+
+            $em->persist($vote);
+            $em->flush();
+
+            return $this->redirectToRoute('remerciement', []);
+
+        }
+
+
         return $this->render('default/choix.html.twig', [
             'destinationsListe' => $destinationsListe,
+            'form'=> $form->createView(),
         ]);
 
     }

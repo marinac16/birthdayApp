@@ -16,8 +16,70 @@ class Vote
      */
     private $id;
 
-    public function getId(): ?int
+    /**
+     * @ORM\OneToOne(targetEntity="User")
+     */
+    private $user;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Destination", inversedBy="Vote")
+     */
+    private $destinations;
+
+    //#################### CONSTRUCTOR #####################################
+
+
+    public function __construct() {
+        $this->user = $this->getUser();
+    }
+
+
+    //#################### GETTER/SETTER #####################################
+
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user): void
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDestinations()
+    {
+        return $this->destinations;
+    }
+
+    /**
+     * @param mixed $destinations
+     */
+    public function setDestinations($destinations): void
+    {
+        $this->destinations = $destinations;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
+
+    
+
+
+
 }

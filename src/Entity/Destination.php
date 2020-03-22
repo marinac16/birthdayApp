@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,6 +31,27 @@ class Destination
      * @ORM\Column(type="string", length=255)
      */
     private $url;
+    /**
+     * @ORM\OneToMany(targetEntity="Vote", mappedBy="Destination", cascade={"persist"})
+     */
+    private $votes;
+
+
+    //#################### CONSTRUCTOR #####################################
+
+
+    public function __construct() {
+        $this->votes = new ArrayCollection();
+    }
+
+    //#################### TOSTRING #####################################
+
+    public function __toString()
+    {
+        return $this->getName();
+
+    }
+
 
     //#################### GETTER/SETTER #####################################
 
