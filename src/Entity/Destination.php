@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,7 +31,7 @@ class Destination
      */
     private $url;
     /**
-     * @ORM\OneToMany(targetEntity="Vote", mappedBy="Destination", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Vote", mappedBy="destination")
      */
     private $votes;
 
@@ -40,8 +39,12 @@ class Destination
     //#################### CONSTRUCTOR #####################################
 
 
-    public function __construct() {
-        $this->votes = new ArrayCollection();
+    /**
+     * Destination constructor.
+     * @param $votes
+     */
+    public function __construct($votes) {
+        $this->votes = $votes;
     }
 
     //#################### TOSTRING #####################################
@@ -99,5 +102,25 @@ class Destination
     {
         $this->url = $url;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getVotes()
+    {
+        return $this->votes;
+    }
+
+    /**
+     * @param mixed $votes
+     */
+    public function setVotes($votes): void
+    {
+        $this->votes = $votes;
+    }
+
+
+
+
 
 }

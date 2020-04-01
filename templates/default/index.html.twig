@@ -4,12 +4,13 @@
 
 {% block body %}
     <div id="explication_container">
-        <h1>Bonjour et bienvenue à bord de AirMuzon</h1>
 
-        <p>C'est votre commandant de bord qui vous parle.</p>
-        <p>Vous êtes ici pour choisir la prochaine destination voyage de Marina.</p>
+        <img src="{{asset('images/img/capitaine.png')}}" class="img-cap">
 
-        <a href="{{ path('choix') }}"> <button type="button">Je vote</button></a>
+        <div class="btn-emplacement">
+            <a href="{{ path('choix') }}"> <button class="btn btn-principal" type="button">J'accepte la mission</button></a>
+
+        </div>
     </div>
 
 

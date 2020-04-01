@@ -21,17 +21,22 @@ class Vote
      */
     private $user;
 
-
     /**
-     * @ORM\ManyToOne(targetEntity="Destination", inversedBy="Vote")
+     * @ORM\ManyToOne(targetEntity="Destination", inversedBy="votes", cascade={"persist"})
      */
-    private $destinations;
+    private $destination;
+
+
 
     //#################### CONSTRUCTOR #####################################
 
 
+    /**
+     * Vote constructor.
+     */
     public function __construct() {
         $this->user = $this->getUser();
+        $this->destination = $this->getDestination();
     }
 
 
@@ -57,18 +62,20 @@ class Vote
     /**
      * @return mixed
      */
-    public function getDestinations()
+    public function getDestination()
     {
-        return $this->destinations;
+        return $this->destination;
     }
 
     /**
-     * @param mixed $destinations
+     * @param mixed $destination
      */
-    public function setDestinations($destinations): void
+    public function setDestination($destination): void
     {
-        $this->destinations = $destinations;
+        $this->destination = $destination;
     }
+
+
 
     /**
      * @return mixed

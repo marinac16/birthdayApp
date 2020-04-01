@@ -2,13 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48f5814a-15c4-4bdf-9dbd-6f9f5c4a5ea5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/birthdayApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/birthdayApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/destinations/afriquedusud.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/destinations/bolivie.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/destinations/canada.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/destinations/cuba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/destinations/islande.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/destinations/japon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/destinations/mexique.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/destinations/norvege.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Destination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Vote.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/VoteRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Vote.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Vote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/VoteType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/VoteType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default/choix.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/choix.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/remerciement.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/remerciement.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,6 +170,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -160,11 +179,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/default" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/JS" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/default" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -181,7 +200,15 @@
       <workItem from="1584624701870" duration="6125000" />
       <workItem from="1584800377674" duration="7735000" />
       <workItem from="1584869075957" duration="3311000" />
-      <workItem from="1584872881785" duration="6186000" />
+      <workItem from="1584872881785" duration="6384000" />
+      <workItem from="1585124604067" duration="987000" />
+      <workItem from="1585133355006" duration="5411000" />
+      <workItem from="1585152791626" duration="10672000" />
+      <workItem from="1585226854344" duration="511000" />
+      <workItem from="1585330015148" duration="2623000" />
+      <workItem from="1585560664326" duration="7069000" />
+      <workItem from="1585641039251" duration="13677000" />
+      <workItem from="1585727886753" duration="2749000" />
     </task>
     <servers />
   </component>
@@ -189,10 +216,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="344" y="266" key="#com.intellij.ide.util.MemberChooser" timestamp="1584889104305">
+    <state x="344" y="266" key="#com.intellij.ide.util.MemberChooser" timestamp="1585168396495">
       <screen x="0" y="23" width="2048" height="1041" />
     </state>
-    <state x="344" y="266" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1041@0.23.2048.1041" timestamp="1584889104305" />
+    <state x="344" y="266" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1041@0.23.2048.1041" timestamp="1585168396495" />
     <state x="257" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584883090712">
       <screen x="0" y="23" width="2048" height="1041" />
     </state>
@@ -201,17 +228,21 @@
       <screen x="0" y="23" width="2048" height="1041" />
     </state>
     <state x="299" y="305" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.2048.1041@0.23.2048.1041" timestamp="1584871480845" />
-    <state x="63" y="182" key="SettingsEditor" timestamp="1584873139239">
+    <state x="63" y="182" key="SettingsEditor" timestamp="1585644775836">
       <screen x="0" y="23" width="2048" height="1041" />
     </state>
-    <state x="63" y="182" key="SettingsEditor/0.23.2048.1041@0.23.2048.1041" timestamp="1584873139239" />
+    <state x="63" y="182" key="SettingsEditor/0.23.2048.1041@0.23.2048.1041" timestamp="1585644775836" />
+    <state x="401" y="466" key="VCS.ChangelistChooser" timestamp="1585670815919">
+      <screen x="0" y="23" width="2048" height="1041" />
+    </state>
+    <state x="401" y="466" key="VCS.ChangelistChooser/0.23.2048.1041@0.23.2048.1041" timestamp="1585670815919" />
     <state x="701" y="375" key="com.intellij.ide.util.TipDialog" timestamp="1584624710895">
       <screen x="0" y="23" width="2048" height="1041" />
     </state>
     <state x="701" y="375" key="com.intellij.ide.util.TipDialog/0.23.2048.1041@0.23.2048.1041" timestamp="1584624710895" />
-    <state x="143" y="131" width="837" height="825" key="find.popup" timestamp="1584885777781">
+    <state x="206" y="192" width="837" height="825" key="find.popup" timestamp="1585140460817">
       <screen x="0" y="23" width="2048" height="1041" />
     </state>
-    <state x="143" y="131" width="837" height="825" key="find.popup/0.23.2048.1041@0.23.2048.1041" timestamp="1584885777781" />
+    <state x="206" y="192" width="837" height="825" key="find.popup/0.23.2048.1041@0.23.2048.1041" timestamp="1585140460817" />
   </component>
 </project>

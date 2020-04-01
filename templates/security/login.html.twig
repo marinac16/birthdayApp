@@ -3,6 +3,8 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+
+    <div class="form-login">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -14,29 +16,17 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputNumBillet">Num Billet</label>
-    <input type="text" value="{{ last_username }}" name="numBillet" id="inputNumBillet" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
+    {#<h1 class="h3 mb-3 font-weight-normal">J'ai trouvé le code secret !</h1>#}
+    <input type="text" name="numBillet" id="inputNumBillet" class="form-input" placeholder="Numéro de billet" required autofocus>
+    <input type="password" name="password" id="inputPassword" class="form-input" placeholder="Code secret" required>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+    <div class="btn-emplacement">
+        <button class="btn btn-login" type="submit"><img src="{{ asset('images/img/cadena.png') }}" class="cadenas" alt="cadenas"></button>
+    </div>
 </form>
+    </div>
 {% endblock %}

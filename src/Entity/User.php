@@ -32,6 +32,11 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
 
 
     //#################### GETTER/SETTER #####################################
@@ -52,6 +57,15 @@ class User implements UserInterface
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
 
     /**
      * @param mixed $password
@@ -86,16 +100,12 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        // TODO: Implement getRoles() method.
+        $roles = $this->roles;
+        $roles [] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function getPassword()
-    {
-        // TODO: Implement getPassword() method.
-    }
 
     /**
      * @inheritDoc
@@ -110,7 +120,7 @@ class User implements UserInterface
      */
     public function getUsername()
     {
-        // TODO: Implement getUsername() method.
+        return $this->numBillet;
     }
 
     /**

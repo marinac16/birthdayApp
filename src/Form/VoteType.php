@@ -16,9 +16,9 @@ class VoteType extends AbstractType
         $builder
             ->add('destination', EntityType::class, [
                 'class' => Destination::class,
-                'mapped' => false,
-                'multiple' => true,
                 'expanded' => true,
+                'multiple'=> false,
+                'required'=> true
             ])
         ;
     }
