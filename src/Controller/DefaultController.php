@@ -65,10 +65,12 @@ class DefaultController extends AbstractController
             $em->persist($vote);
             $em->flush();
 
+            if ($em)
+
+
             return $this->redirectToRoute('remerciement', []);
 
         }
-
 
         return $this->render('default/choix.html.twig', [
             'form'=> $form->createView(),
@@ -85,6 +87,20 @@ class DefaultController extends AbstractController
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
 
         return $this->render('default/remerciement.html.twig', [
+
+        ]);
+
+    }
+
+    /**
+     * @Route("/error", name="error")
+     */
+    public function AfficherError()
+    {
+
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
+
+        return $this->render('default/error.html.twig', [
 
         ]);
 

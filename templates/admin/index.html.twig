@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Resultat{% endblock %}
+
+{% block body %}
+
+<div class="resultat">
+    <div class="titre-resultat">
+        <h1>Voici le résultat</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12 emplacement-graphique">
+            <canvas id="bar-chart" width="1200" height="750"></canvas>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+
+        // Bar chart
+        Chart.defaults.global.defaultFontColor = '#051d46';
+        Chart.defaults.global.defaultFontSize = 20;
+        new Chart(document.getElementById("bar-chart"), {
+            type: 'bar',
+            data: {
+                labels: ["{% for destination in destinations  %}{{ destination.name }}","{% endfor %}"],
+                datasets: [
+                    {
+                        backgroundColor: ["#ad0015","#ad0015","#ad0015","#ad0015"],
+                        data: [{{ votes.afriqueDuSud }},
+                            {{ votes.jordanie }},
+                            {{ votes.japon }},
+                            {{ votes.norvege }}],
+                    }
+                ]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            color: "rgba(0, 0, 0, 0)",
+                        }
+                    }],
+
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        },
+                        gridLines: {
+                            color: "rgb(90,90,90)",
+                        }
+                    }],
+
+                }
+            }
+        });
+
+
+    </script>
+{% endblock %}

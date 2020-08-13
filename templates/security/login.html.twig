@@ -1,32 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connect{% endblock %}
 
 {% block body %}
 
-    <div class="form-login">
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
     {% if app.user %}
         <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            L'utilisateur {{ app.user.username }} est encore connecté... <a
+                    href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
 
-    {#<h1 class="h3 mb-3 font-weight-normal">J'ai trouvé le code secret !</h1>#}
-    <input type="text" name="numBillet" id="inputNumBillet" class="form-input" placeholder="Numéro de billet" required autofocus>
-    <input type="password" name="password" id="inputPassword" class="form-input" placeholder="Code secret" required>
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+        {% if app.user == false %}
 
-    <div class="btn-emplacement">
-        <button class="btn btn-login" type="submit"><img src="{{ asset('images/img/cadena.png') }}" class="cadenas" alt="cadenas"></button>
-    </div>
-</form>
-    </div>
+            <div class="cont-question">
+                <h3>Tu penses avoir trouvé ton code secret ???
+                <br>
+                    Essaie ! tu verras ...
+                </h3>
+            </div>
+
+            <div class="form-group">
+                <div class="fieldset">
+                    <input type="text" name="numBillet" id="inputNumBillet" class="form-control"
+                           placeholder="Numéro de billet" required autofocus>
+                    <input type="password" name="password" id="inputPassword" class="form-control"
+                           placeholder="Code secret"
+                           required>
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+
+                    <button class="btn btn-login" type="submit">
+                        <img src="{{ asset('images/img/cadena.png') }}" class="cadenas" alt="cadenas">
+                    </button>
+                </div>
+
+
+            </div>
+
+        {% endif %}
+    </form>
+
+
 {% endblock %}

@@ -4,39 +4,40 @@
 
 {% block body %}
 
-
-    <div id="choix_container">
+    <div class="container-principal">
         <div class="titre">
-            <h3>
-                Mission : choisir le prochain voyage de Marina
-            </h3>
+            <h3>MISSION</h3>
+            <br>
+            <h4>Choisir le prochain voyage de Marina</h4>
         </div>
-        <div class="conteneur-principal-vote"
+
         {{ form_start(form) }}
 
-        {% for destinationField in form.destination %}
-            {% set index = destinationField.vars.value %}
-            {% set entity = form.destination.vars.choices[index].data %}
+        <div class="conteneur-principal-vote">
+            {% for destinationField in form.destination %}
+                {% set index = destinationField.vars.value %}
+                {% set entity = form.destination.vars.choices[index].data %}
 
-            <div class="">
-                <div class="conteneur-img-label">
-                    <img class="img-destination" src="{{ entity.url }}" alt="">
+                <div class="cont-choix">
+                    <div class="conteneur-img-label">
+                        <img class="img-destination" src="{{ entity.url }}" alt="">
 
-                    <h5 class="label-destination">{{ form_label(destinationField) }}</h5>
-                    <h5>{{ form_widget(destinationField) }}</h5>
+                        <h5 class="label-destination">{{ form_label(destinationField) }}</h5>
+                        <h5>{{ form_widget(destinationField) }}</h5>
+                    </div>
                 </div>
-            </div>
 
 
-        {% endfor %}
+            {% endfor %}
 
 
-            <button type="submit" class="btn btn-principal btn-vote">Je suis sûre de mon choix</button>
-
-
-            {{ form_end(form) }}
+            <button type="submit" class="btn btn-ok btn-success">Je suis sûre de mon choix</button>
         </div>
 
+        {{ form_end(form) }}
     </div>
+
+
+
 
 {% endblock %}

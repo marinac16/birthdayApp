@@ -4,11 +4,13 @@
 
 {% block body %}
 
-    <div id="remerciement_container">
-        <h1>Merci pour ta participation</h1>
-    </div>
-    <div>
-        <a href="{{ path ('app_logout') }}"><button>Terminus</button></a>
+    <div class="container-principal">
+        <img src="{{asset('images/img/merci.png')}}" class="img-cap">
+
+        <div class="btn-emplacement">
+            <a href="{{ path ('app_logout') }}"><button class="btn-exit btn-secondary btn-ok">EXIT &nbsp;&nbsp;<i class="fas fa-sign-out-alt"></i></button></a>
+        </div>
+
     </div>
 
 {% endblock %}
