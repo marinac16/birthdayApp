@@ -24,7 +24,6 @@
         "symfony/orm-pack": "^1.0",
         "symfony/process": "5.0.*",
         "symfony/requirements-checker": "^1.1",
-        "symfony/security": "^4.4",
         "symfony/security-bundle": "5.0.*",
         "symfony/security-csrf": "5.0.*",
         "symfony/serializer-pack": "*",
@@ -34,8 +33,7 @@
         "symfony/validator": "5.0.*",
         "symfony/var-dumper": "5.0.*",
         "symfony/web-link": "5.0.*",
-        "symfony/yaml": "5.0.*",
-      "ext-http": "*"
+        "symfony/yaml": "5.0.*"
     },
     "require-dev": {
         "symfony/profiler-pack": "*",
