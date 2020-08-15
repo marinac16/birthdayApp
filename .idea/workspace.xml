@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="48f5814a-15c4-4bdf-9dbd-6f9f5c4a5ea5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/CalculDesVotes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CalculDesVotes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +155,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
@@ -165,6 +166,7 @@
       <recent name="$PROJECT_DIR$/public/JS" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception" />
       <recent name="$PROJECT_DIR$/public/images/img" />
       <recent name="$PROJECT_DIR$/templates/default" />
       <recent name="$PROJECT_DIR$/templates/inc" />
@@ -196,7 +198,7 @@
       <workItem from="1585813629267" duration="3359000" />
       <workItem from="1585845390541" duration="503000" />
       <workItem from="1597335501733" duration="16302000" />
-      <workItem from="1597502982779" duration="11414000" />
+      <workItem from="1597502982779" duration="14085000" />
     </task>
     <servers />
   </component>
