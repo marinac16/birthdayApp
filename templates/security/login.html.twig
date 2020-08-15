@@ -12,16 +12,16 @@
         </div>
     {% endif %}
 
-    <form method="post">
+    <form method="post" class="login-form">
         {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            <div class="alert alert-danger">Raté !! Essaie encore ...</div>
         {% endif %}
 
         {% if app.user == false %}
 
             <div class="cont-question">
-                <h3>Tu penses avoir trouvé ton code secret ???
-                <br>
+                <h3>Tu penses avoir trouvé <br> ton code secret ???
+                <br><br>
                     Essaie ! tu verras ...
                 </h3>
             </div>
