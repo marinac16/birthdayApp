@@ -7,10 +7,11 @@
 <div class="resultat">
     <div class="titre-resultat">
         <h1>Voici le résultat</h1>
+        <h2>Nombre de vote(s) : {{ votes.jordanie + votes.afriqueDuSud + votes.islande + votes.norvege}}</h2>
     </div>
     <div class="row">
         <div class="col-md-12 emplacement-graphique">
-            <canvas id="bar-chart" width="1200" height="750"></canvas>
+            <canvas id="bar-chart" width="1200" height="750"/>
         </div>
     </div>
 
@@ -21,7 +22,7 @@
     <script>
 
         // Bar chart
-        Chart.defaults.global.defaultFontColor = '#051d46';
+        Chart.defaults.global.defaultFontColor = '#ffffff';
         Chart.defaults.global.defaultFontSize = 20;
         new Chart(document.getElementById("bar-chart"), {
             type: 'bar',
@@ -31,9 +32,9 @@
                     {
                         backgroundColor: ["#ad0015","#ad0015","#ad0015","#ad0015"],
                         data: [{{ votes.afriqueDuSud }},
-                            {{ votes.jordanie }},
-                            {{ votes.japon }},
-                            {{ votes.norvege }}],
+                            {{ votes.norvege }},
+                            {{ votes.islande }},
+                            {{ votes.jordanie }}],
                     }
                 ]
             },

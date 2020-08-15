@@ -36,7 +36,7 @@ class CalculDesVotes
         $retour = [
             'afriqueDuSud'=> 0,
             'jordanie'=> 0,
-            'japon'=> 0,
+            'islande'=> 0,
             'norvege' => 0
         ];
 
@@ -61,7 +61,7 @@ class CalculDesVotes
             ->where('v.destination = 3')
             ->getQuery()
             ->getSingleScalarResult();
-        $retour ['japon'] = $totalVote3;
+        $retour ['islande'] = $totalVote3;
 
         $totalVote4 = $this->voteRepo->createQueryBuilder('v')
             ->select('count (v)')
