@@ -2,13 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\DestinationRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=DestinationRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\DestinationRepository")
  */
 class Destination
 {
@@ -33,17 +30,21 @@ class Destination
      * @ORM\Column(type="string", length=255)
      */
     private $url;
-
     /**
-     * @ORM\OneToMany(targetEntity=vote::class, mappedBy="destination")
+     * @ORM\OneToMany(targetEntity="Vote", mappedBy="destination")
      */
     private $votes;
 
+
     //#################### CONSTRUCTOR #####################################
 
-    public function __construct()
-    {
-        $this->votes = new ArrayCollection();
+
+    /**
+     * Destination constructor.
+     * @param $votes
+     */
+    public function __construct($votes) {
+        $this->votes = $votes;
     }
 
     //#################### TOSTRING #####################################
@@ -54,8 +55,8 @@ class Destination
 
     }
 
-    //#################### GETTER/SETTER #####################################
 
+    //#################### GETTER/SETTER #####################################
 
     public function getId(): ?int
     {
@@ -86,46 +87,41 @@ class Destination
         return $this;
     }
 
-    public function getUrl(): ?string
+    /**
+     * @return mixed
+     */
+    public function getUrl()
     {
         return $this->url;
     }
 
-    public function setUrl(string $url): self
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url): void
     {
         $this->url = $url;
-
-        return $this;
     }
 
     /**
-     * @return Collection|vote[]
+     * @return mixed
      */
-    public function getVotes(): Collection
+    public function getVotes()
     {
         return $this->votes;
     }
 
-    public function addVote(vote $vote): self
+    /**
+     * @param mixed $votes
+     */
+    public function setVotes($votes): void
     {
-        if (!$this->votes->contains($vote)) {
-            $this->votes[] = $vote;
-            $vote->setDestination($this);
-        }
-
-        return $this;
+        $this->votes = $votes;
     }
 
-    public function removeVote(vote $vote): self
-    {
-        if ($this->votes->contains($vote)) {
-            $this->votes->removeElement($vote);
-            // set the owning side to null (unless already changed)
-            if ($vote->getDestination() === $this) {
-                $vote->setDestination(null);
-            }
-        }
 
-        return $this;
-    }
+
+
+
 }
+
