@@ -45,7 +45,14 @@ class Destination
     {
         $this->votes = new ArrayCollection();
     }
-    
+
+    //#################### TOSTRING #####################################
+
+    public function __toString()
+    {
+        return $this->getName();
+
+    }
 
     //#################### GETTER/SETTER #####################################
 
