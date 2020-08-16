@@ -37,7 +37,8 @@ class CalculDesVotes
             'afriqueDuSud'=> 0,
             'jordanie'=> 0,
             'islande'=> 0,
-            'norvege' => 0
+            'norvege' => 0,
+            'totalvotes' => 0
         ];
 
         $em = $this->entityManager;
@@ -69,6 +70,8 @@ class CalculDesVotes
             ->getQuery()
             ->getSingleScalarResult();
         $retour ['norvege'] = $totalVote4;
+
+        $retour ['totalvotes'] = $totalVote1 + $totalVote2 + $totalVote3 + $totalVote4;
 
 
         return $retour;

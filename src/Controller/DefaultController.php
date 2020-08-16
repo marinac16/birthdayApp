@@ -8,7 +8,6 @@ use App\Form\InscriptionType;
 use App\Form\VoteType;
 use App\Repository\DestinationRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -61,17 +60,12 @@ class DefaultController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
-            try {
-                $vote->setUser($user);
+            $vote->setUser($user);
 
-                $em->persist($vote);
-                $em->flush();
+            $em->persist($vote);
+            $em->flush();
 
-                return $this->redirectToRoute('remerciement', []);
-            }catch (EntityNotFoundException $e){
-                return $this->redirectToRoute('error', []);
-            }
-
+            return $this->redirectToRoute('remerciement', []);
 
         }
 
@@ -95,19 +89,6 @@ class DefaultController extends AbstractController
 
     }
 
-    /**
-     * @Route("/error", name="error")
-     */
-    public function AfficherError()
-    {
-
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
-
-        return $this->render('default/error.html.twig', [
-
-        ]);
-
-    }
 
     /**
      * @Route("/inscription", name="inscription")

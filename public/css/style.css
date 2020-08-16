@@ -131,10 +131,21 @@ body {
 }
 
 
+/* ********** RESULTAT *********** */
 
+.graphique-cont{
+    margin: 70px 0;
+}
 
+.titre-resultat{
+    text-align: center;
+}
 
-/* ********** PAGE CHOIX *********** */
+.nbvotes-cont{
+    text-align: center;
+}
+
+/* ********** TYPOGRAPHIE *********** */
 
 h3 {
     font-size: 50px;

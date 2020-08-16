@@ -27,16 +27,12 @@ class AdminController extends AbstractController
         $this->calculDesVotes = $calculDesVotes;
     }
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/resultat", name="resultat")
      */
     public function index()
     {
 
         $destinations = $this->destinationRepo->findAll();
-
-
-
-
 
 
         return $this->render('admin/index.html.twig', [

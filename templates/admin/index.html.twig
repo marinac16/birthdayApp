@@ -7,14 +7,21 @@
 <div class="resultat">
     <div class="titre-resultat">
         <h1>Voici le résultat</h1>
-        <h2>Nombre de vote(s) : {{ votes.jordanie + votes.afriqueDuSud + votes.islande + votes.norvege}}</h2>
     </div>
     <div class="row">
-        <div class="col-md-12 emplacement-graphique">
+        <div class="col-md-12 graphique-cont">
             <canvas id="bar-chart" width="1200" height="750"/>
         </div>
     </div>
-
+    <div class="nbvotes-cont">
+        {% if votes.totalvotes == 0 %}
+        <h2>Actuellement {{ votes.totalvotes }} personne n'a votée ! </h2>
+        {% elseif votes.totalvotes == 1 %}
+        <h2>Actuellement {{ votes.totalvotes }} personne a votée ! </h2>
+        {% else %}
+        <h2>Actuellement {{ votes.totalvotes }} personnes ont votées ! </h2>
+        {% endif %}
+    </div>
 
 </div>
 {% endblock %}
@@ -32,9 +39,9 @@
                     {
                         backgroundColor: ["#ad0015","#ad0015","#ad0015","#ad0015"],
                         data: [{{ votes.afriqueDuSud }},
-                            {{ votes.norvege }},
+                            {{ votes.jordanie }},
                             {{ votes.islande }},
-                            {{ votes.jordanie }}],
+                            {{ votes.norvege }}],
                     }
                 ]
             },
