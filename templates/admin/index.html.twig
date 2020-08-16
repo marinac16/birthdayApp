@@ -22,6 +22,9 @@
         <h2>Actuellement {{ votes.totalvotes }} personnes ont votées ! </h2>
         {% endif %}
     </div>
+    <div class="btn-emplacement">
+        <a href="{{ path ('app_logout') }}"><button class="btn-exit btn-secondary btn-ok">EXIT &nbsp;&nbsp;<i class="fas fa-sign-out-alt"></i></button></a>
+    </div>
 
 </div>
 {% endblock %}

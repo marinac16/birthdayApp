@@ -32,6 +32,8 @@ class AdminController extends AbstractController
     public function index()
     {
 
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
+
         $destinations = $this->destinationRepo->findAll();
 
 
