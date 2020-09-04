@@ -31,8 +31,9 @@
                     <input type="text" name="numBillet" id="inputNumBillet" class="form-control"
                            placeholder="Numéro de billet" required autofocus>
                     <input type="password" name="password" id="inputPassword" class="form-control"
-                           placeholder="Code secret"
+                           placeholder="Code secret*"
                            required>
+                    <p style="color: #8b1f1e">* Votre code secret est composé de votre numéro de place + les deux premières lettres du mot secret</p>
 
                     <input type="hidden" name="_csrf_token"
                            value="{{ csrf_token('authenticate') }}"
